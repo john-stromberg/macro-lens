@@ -64,7 +64,7 @@ export function PulseBoard({ releases }: { releases: IndicatorRelease[] }) {
           }
         >
           <SelectTrigger className="w-full rounded-sm sm:w-40">
-            <SelectValue placeholder="Region" />
+            <SelectValue placeholder="Region">{region}</SelectValue>
           </SelectTrigger>
           <SelectContent>
             {regions.map((item) => (

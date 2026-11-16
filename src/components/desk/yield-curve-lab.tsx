@@ -77,9 +77,12 @@ export function YieldCurveLab({ curves }: { curves: YieldCurveSnapshot[] }) {
           <span className="text-xs uppercase tracking-[0.12em] text-[var(--ink-faint)]">
             Compare
           </span>
-          <Select value={compareId} onValueChange={(value) => setCompareId(value ?? compareId)}>
+          <Select
+            value={compareId}
+            onValueChange={(value) => setCompareId(value ?? compareId)}
+          >
             <SelectTrigger className="w-44 rounded-sm">
-              <SelectValue />
+              <SelectValue>{compare.label}</SelectValue>
             </SelectTrigger>
             <SelectContent>
               {curves

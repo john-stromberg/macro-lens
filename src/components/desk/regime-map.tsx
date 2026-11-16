@@ -42,18 +42,18 @@ export function RegimeMap({ regimes }: { regimes: RegimePoint[] }) {
         <div className="relative mx-auto aspect-square w-full max-w-2xl overflow-hidden">
           <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
             <Quad
-              title="Reflation"
-              className="border-r border-b border-[var(--ink-line)] bg-[var(--up-soft)]/35"
+              title="Stagflation risk"
+              className="border-r border-b border-[var(--ink-line)] bg-[var(--down-soft)]/35"
             />
             <Quad
               title="Overheating"
               className="border-b border-[var(--ink-line)] bg-[var(--signal-soft)]/50"
             />
             <Quad
-              title="Goldilocks soft"
+              title="Soft / disinflation"
               className="border-r border-[var(--ink-line)] bg-[var(--data-soft)]/40"
             />
-            <Quad title="Stagflation risk" className="bg-[var(--down-soft)]/30" />
+            <Quad title="Goldilocks" className="bg-[var(--up-soft)]/35" />
           </div>
 
           <div className="pointer-events-none absolute left-1/2 top-0 h-full w-px bg-[var(--ink)]/25" />
