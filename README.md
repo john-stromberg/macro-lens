@@ -1,16 +1,16 @@
 # Macro Desk
 
-Research tools for reading the macro cycle: release surprises, yield curves, central-bank policy paths, growth–inflation regimes, and the cross-asset tape.
+PM and research system for a discretionary macro hedge fund: fund book, theses, catalyst calendar, scenario P&L, plus market tools (surprises, curves, policy, regimes, tape).
 
-## Tools
+## Workspaces
 
-- **Pulse** — actual vs consensus for key releases, filterable by region
-- **Curve** — spot UST against a prior session or Bunds, with 2s10s slope
-- **Policy** — policy rates and step paths for Fed, ECB, BoE, BoJ, RBA
-- **Regimes** — growth/inflation quadrant map across major economies
-- **Tape** — ranked cross-asset moves over 1W / 1M / YTD
+- **Book** — positions, factor risk, DTD/MTD/YTD P&L, AUM / gross / net / VaR
+- **Research** — theses with conviction, catalysts, risks, and linked expressions
+- **Calendar** — upcoming releases / CBs / events with book relevance
+- **Scenarios** — shock packs with estimated fund P&L winners and losers
+- **Markets** — Pulse, Curve, Policy, Regimes, Tape
 
-The first cut ships with labeled **sample data**. Swap in a live adapter in `src/lib/data/provider.ts` when you have a vendor feed (FRED, Haver, Bloomberg, etc.).
+Ships with labeled **sample data**. Wire OMS / risk / FRED / Haver / Bloomberg in `src/lib/data/provider.ts` when ready.
 
 ## Run locally
 

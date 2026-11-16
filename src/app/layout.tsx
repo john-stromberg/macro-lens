@@ -22,7 +22,7 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Macro Desk",
   description:
-    "Research tools for macro: release surprises, yield curves, policy paths, regimes, and cross-asset moves.",
+    "Macro hedge fund PM and research desk: book risk, theses, catalysts, scenarios, and market tools.",
 };
 
 export default function RootLayout({

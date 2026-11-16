@@ -44,3 +44,26 @@ export function formatDateTimePT(iso: string): string {
     timeZoneName: "short",
   }).format(new Date(iso));
 }
+
+export function formatUsd(value: number, compact = false): string {
+  if (compact) {
+    const abs = Math.abs(value);
+    const sign = value < 0 ? "-" : "";
+    if (abs >= 1_000_000_000) return `${sign}$${formatNumber(abs / 1_000_000_000, 1)}B`;
+    if (abs >= 1_000_000) return `${sign}$${formatNumber(abs / 1_000_000, 1)}M`;
+    if (abs >= 1_000) return `${sign}$${formatNumber(abs / 1_000, 0)}K`;
+    return `${sign}$${formatNumber(abs, 0)}`;
+  }
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+
+export function formatSignedUsd(value: number, compact = true): string {
+  const body = formatUsd(Math.abs(value), compact);
+  if (value > 0) return `+${body}`;
+  if (value < 0) return `-${body}`;
+  return body;
+}
