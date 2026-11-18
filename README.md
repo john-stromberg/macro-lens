@@ -26,6 +26,15 @@ npm run build
 npm start
 ```
 
+### Static portfolio demo
+
+```bash
+STATIC_EXPORT=1 npm run build
+```
+
+Writes a static site to `out/` with `basePath` `/macro-desk` for hosting under
+[john-stromberg.github.io/macro-desk](https://john-stromberg.github.io/macro-desk/).
+
 ## Stack
 
 Next.js, TypeScript, Tailwind CSS, shadcn/ui, Recharts.
