@@ -143,6 +143,50 @@ export type FundBook = {
   positions: Position[];
 };
 
+export type TradeIdeaStatus =
+  | "draft"
+  | "ready"
+  | "working"
+  | "filled"
+  | "killed";
+
+export type TradeUrgency = "today" | "this-week" | "patient";
+
+export type TradeCheckStatus = "pass" | "warn" | "fail";
+
+export type TradeCheck = {
+  id: string;
+  label: string;
+  status: TradeCheckStatus;
+  detail: string;
+};
+
+export type TradeIdea = {
+  id: string;
+  name: string;
+  ticker: string;
+  side: PositionSide;
+  sleeve: AssetMove["sleeve"];
+  factor: RiskFactor;
+  region: string;
+  thesisId: string | null;
+  proposedNotionalUsd: number;
+  proposedRiskUsd: number;
+  status: TradeIdeaStatus;
+  urgency: TradeUrgency;
+  rationale: string;
+  analyst: string;
+  checks: TradeCheck[];
+  hedges: string[];
+  createdAt: string;
+};
+
+export type RiskBudget = {
+  factor: RiskFactor;
+  usedUsd: number;
+  limitUsd: number;
+};
+
 export type DeskSnapshot = {
   asOf: string;
   source: "sample" | "live";
@@ -156,4 +200,6 @@ export type DeskSnapshot = {
   theses: Thesis[];
   catalysts: Catalyst[];
   scenarios: Scenario[];
+  tradeIdeas: TradeIdea[];
+  riskBudgets: RiskBudget[];
 };

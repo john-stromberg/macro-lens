@@ -1,10 +1,11 @@
 # Macro Desk
 
-PM and research system for a discretionary macro hedge fund: fund book, theses, catalyst calendar, scenario P&L, plus market tools (surprises, curves, policy, regimes, tape).
+PM and research system for a discretionary macro hedge fund: fund book, trade support / portfolio analyst queue, theses, catalyst calendar, scenario P&L, plus market tools (surprises, curves, policy, regimes, tape).
 
 ## Workspaces
 
 - **Book** — positions, factor risk, DTD/MTD/YTD P&L, AUM / gross / net / VaR
+- **Analyst** — trade ideas, pre-trade checks, risk budgets, hedge notes
 - **Research** — theses with conviction, catalysts, risks, and linked expressions
 - **Calendar** — upcoming releases / CBs / events with book relevance
 - **Scenarios** — shock packs with estimated fund P&L winners and losers

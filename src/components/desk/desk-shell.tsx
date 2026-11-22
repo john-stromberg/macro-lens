@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnalystDesk } from "@/components/desk/analyst-desk";
 import { BookPanel } from "@/components/desk/book-panel";
 import { CatalystCalendar } from "@/components/desk/catalyst-calendar";
 import { CrossAssetTape } from "@/components/desk/cross-asset-tape";
@@ -18,6 +19,7 @@ import { cn } from "@/lib/utils";
 
 const workspaces = [
   { id: "book", label: "Book", blurb: "Positions & risk" },
+  { id: "analyst", label: "Analyst", blurb: "Trade support" },
   { id: "research", label: "Research", blurb: "Theses" },
   { id: "calendar", label: "Calendar", blurb: "Catalysts" },
   { id: "scenarios", label: "Scenarios", blurb: "Shock P&L" },
@@ -65,8 +67,8 @@ export function DeskShell({ snapshot }: { snapshot: DeskSnapshot }) {
                 Macro Desk
               </h1>
               <p className="max-w-xl text-base text-[var(--ink-muted)] md:text-lg">
-                PM book, research theses, catalysts, and scenario risk — with the
-                market tools underneath.
+                PM book, trade support, research theses, catalysts, and scenario
+                risk — with the market tools underneath.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-x-6 gap-y-2 font-mono text-xs text-[var(--ink-faint)] sm:grid-cols-4">
@@ -116,6 +118,13 @@ export function DeskShell({ snapshot }: { snapshot: DeskSnapshot }) {
 
             <TabsContent value="book" className="mt-2 outline-none">
               <BookPanel book={snapshot.book} theses={snapshot.theses} />
+            </TabsContent>
+            <TabsContent value="analyst" className="mt-2 outline-none">
+              <AnalystDesk
+                ideas={snapshot.tradeIdeas}
+                budgets={snapshot.riskBudgets}
+                theses={snapshot.theses}
+              />
             </TabsContent>
             <TabsContent value="research" className="mt-2 outline-none">
               <ThesisBoard
