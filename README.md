@@ -1,15 +1,26 @@
 # Macro Desk
 
-PM and research system for a discretionary macro hedge fund: fund book, trade support / portfolio analyst queue, theses, catalyst calendar, scenario P&L, plus market tools (surprises, curves, policy, regimes, tape).
+Macro hedge fund platform with **two separate modules**:
 
-## Workspaces
+- **PM desk** (`/pm`) — fund book, research theses, catalysts, scenarios, market tools
+- **Trade support** (`/trade-support`) — portfolio-analyst queue, pre-trade checks, risk budgets, book context
+
+The home page (`/`) is the module picker.
+
+## PM dashboard
 
 - **Book** — positions, factor risk, DTD/MTD/YTD P&L, AUM / gross / net / VaR
-- **Analyst** — trade ideas, pre-trade checks, risk budgets, hedge notes
 - **Research** — theses with conviction, catalysts, risks, and linked expressions
-- **Calendar** — upcoming releases / CBs / events with book relevance
+- **Calendar** — upcoming releases /!CBs / events with book relevance
 - **Scenarios** — shock packs with estimated fund P&L winners and losers
 - **Markets** — Pulse, Curve, Policy, Regimes, Tape
+
+## Trade support dashboard
+
+- **Queue** — trade ideas with status, urgency, checks, hedges
+- **Budgets** — factor used / limit / headroom plus queue risk
+- **Book context** — read-only positions for sizing
+- **Calendar** — event risk for tickets in flight
 
 Ships with labeled **sample data**. Wire OMS / risk / FRED / Haver / Bloomberg in `src/lib/data/provider.ts` when ready.
 

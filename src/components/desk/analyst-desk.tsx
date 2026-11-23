@@ -64,11 +64,11 @@ export function AnalystDesk({
     <section className="space-y-5 animate-in fade-in duration-500">
       <header className="space-y-2">
         <h2 className="font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] md:text-4xl">
-          Trade support
+          Idea queue
         </h2>
         <p className="max-w-2xl text-[var(--ink-muted)]">
-          Portfolio-analyst queue: proposed tickets, pre-trade checks, risk-budget
-          headroom, and hedge notes for the PM.
+          Proposed tickets with pre-trade checks, risk-budget headroom, and hedge
+          notes staged for the PM.
         </p>
       </header>
 
@@ -117,8 +117,7 @@ export function AnalystDesk({
               </li>
             );
           })}
-        </ul>
-      </div>
+        </ul>      </div>
 
       <div className="flex flex-wrap gap-2">
         {statuses.map((item) => (
@@ -197,8 +196,7 @@ export function AnalystDesk({
                   {active.name}
                 </h3>
                 <p className="mt-1 font-mono text-xs text-[var(--ink-muted)]">
-                  {active.ticker} · {active.region} · {active.sleeve}
-                </p>
+                  {active.ticker} · {active.region} · {active.sleeve}                </p>
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 <StatusBadge status={active.status} />
@@ -237,8 +235,7 @@ export function AnalystDesk({
             <div className="mt-5">
               <p className="text-[11px] uppercase tracking-[0.14em] text-[var(--ink-faint)]">
                 Pre-trade checks
-              </p>
-              <ul className="mt-2 space-y-2">
+              </p>              <ul className="mt-2 space-y-2">
                 {active.checks.map((check) => (
                   <li
                     key={check.id}
@@ -296,7 +293,6 @@ function checkTone(status: TradeCheckStatus) {
   if (status === "warn") return "text-[var(--signal-ink)]";
   return "text-[var(--down)]";
 }
-
 function CheckDot({ status }: { status: TradeCheckStatus }) {
   return (
     <span
